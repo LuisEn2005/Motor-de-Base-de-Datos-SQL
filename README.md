@@ -81,10 +81,6 @@ El ejecutable usa `t=64` por defecto. Las pruebas también cubren `t=2`, `t=3`,
 - El grado predeterminado `t=64` permite hasta 127 claves y 128 hijos por nodo,
   reduciendo la altura para cargas grandes.
 
-La explicación completa está en [docs/architecture.md](docs/architecture.md) y
-el guion sugerido para la exposición en
-[docs/presentation.md](docs/presentation.md).
-
 ## Limpieza
 
 ```bash
