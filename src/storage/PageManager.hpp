@@ -18,7 +18,7 @@ public:
   explicit PageManager(std::size_t pageCapacity = DEFAULT_PAGE_CAPACITY)
     : m_pageCapacity(pageCapacity)
   {
-    if (m_pageCapacity == 0) {
+    if (m_pageCapacity <= 0) {
       throw std::invalid_argument("PageManager: page capacity must be positive");
     }
   }
