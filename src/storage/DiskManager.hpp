@@ -63,6 +63,16 @@ public:
     if (id == m_pageCount + 1) ++m_pageCount;
   }
 
+  void reset()
+  {
+    m_file.close();
+    { std::ofstream truncate(m_path, std::ios::binary | std::ios::trunc); }
+    m_file.clear();
+    m_file.open(m_path, std::ios::binary | std::ios::in | std::ios::out);
+    if (!m_file) throw std::runtime_error("DiskManager: no se pudo reabrir");
+    m_pageCount = 0;
+  }
+
   [[nodiscard]] std::size_t pageCount() const { return m_pageCount; }
 
 private:

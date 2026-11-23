@@ -10,7 +10,7 @@
 #include <vector>
 
 TEST_CASE(row_id_maps_records_to_page_and_slot) {
-    storage::RecordManager records(2);
+    storage::RecordManager records;
     const auto first = records.insert(storage::Tuple{std::int64_t{1}});
     const auto second = records.insert(storage::Tuple{std::int64_t{2}});
     const auto third = records.insert(storage::Tuple{std::int64_t{3}});
@@ -25,7 +25,7 @@ TEST_CASE(row_id_maps_records_to_page_and_slot) {
 }
 
 TEST_CASE(record_manager_supports_crud_and_stable_row_ids) {
-    storage::RecordManager records(2);
+    storage::RecordManager records;
     const storage::Tuple original{std::int64_t{7}, std::string{"original"}};
     const storage::Tuple updated{std::int64_t{7}, std::string{"updated"}};
     const auto id = records.insert(original);
