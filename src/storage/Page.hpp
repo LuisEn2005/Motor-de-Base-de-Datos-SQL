@@ -22,6 +22,8 @@ public:
   static constexpr std::size_t HEADER_SIZE = 4;
   static constexpr std::size_t ENTRY_SIZE = 4;
   static constexpr std::uint16_t EMPTY = 0xFFFF;
+  static constexpr std::size_t MAX_RECORD_SIZE =
+    DEFAULT_SIZE - HEADER_SIZE - ENTRY_SIZE;
 
   explicit Page(std::size_t size = DEFAULT_SIZE) : m_bytes(size, 0)
   {
